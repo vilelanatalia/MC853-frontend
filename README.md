@@ -7,10 +7,13 @@ Copie os modelos existentes
  - useUsers: exemplo concreto
  - useAnything: exemplo generico
 
-# Como funciona a arquitetura:
+# Como funciona a arquitetura e como desenvolver:
+
+O primeiro passo é criar uma nova branch a partir da main.
+
 O codigo html chama hooks para receber dados externos à aplicação. O hook por sua vez usa a biblioteca de requests que preferir. Desde que ele retorne um objeto {data, isLoading, error} tudo bem.
 
-Podemos forkear o repositorio, ou criar um novo hook no mesmo repositorio, de tal forma que a nova implementação acione o mesmo endpoint do backend, mas usando uma forma de request diferente. Por exemplo, removendo o useQuery do rect query de dentro do hook e colocando uma chamada direta para o fetch do javascript. Assim fazemos a troca de uma lib pra outra para compararmos.
+Podemos criar um novo hook no mesmo repositorio, de tal forma que a nova implementação acione o mesmo endpoint do backend, mas usando uma forma de request diferente. Por exemplo, removendo o useQuery do rect query de dentro do hook e colocando uma chamada direta para o fetch do javascript. Assim fazemos a troca de uma lib pra outra para compararmos.
 
 Ja a diversidade dos testes pode ser obtida adicionando mais hook. Assim variando o payload e os tamanhos de response que devolvemos no backend.
 
